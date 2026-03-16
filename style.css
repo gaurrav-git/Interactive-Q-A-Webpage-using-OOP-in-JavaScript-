@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 2rem auto;
+    color: #333;
+}
+
+.qa-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Grouping each question and answer pair */
+.qa-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Style questions with font weight and cursor on hover */
+.question {
+    background-color: #f4f4f4;
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    transition: background-color 0.2s ease;
+}
+
+.question:hover {
+    background-color: #e0e0e0;
+}
+
+/* Visual cues '+' or '-' icons to indicate state */
+.icon {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Answers should be hidden by default with smooth expand/collapse */
+.answer-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out; 
+    background-color: #fff;
+}
+
+.answer {
+    padding: 15px;
+    margin: 0;
+    border-top: 1px solid #ccc;
+    line-height: 1.5;
+}
+
+/* Use class toggling for implementation */
+.qa-item.active .answer-wrapper {
+    max-height: 200px; 
+}
